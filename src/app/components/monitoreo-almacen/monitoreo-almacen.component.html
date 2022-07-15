@@ -1,0 +1,47 @@
+<div class="row mt-3">
+    <h2>Control Almacen</h2>
+    <div class="col table-responsive-sm">
+      <table id="dtMascota" class="table table-bordered table-striped table-sm table-responsive-md" style="width: 100%;">
+        <thead>
+          <tr class="table-info ">
+            <th>ID</th>
+            <th>Solicitante</th>
+            <th>Fecha Solicitud</th>
+            <th>Para</th>
+            <th>Motivo Salida</th>
+            <th>Cantidad</th>
+            <th>Unidad Medida</th>
+            <th>Area</th>
+            <th>Descripción</th>
+            <th>Observaciones</th>
+            <th>Autorizador</th>
+            <th>Salida</th>
+            <th>Provedor</th>
+            <th>Comentarios</th>
+            <th>Regreso</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody class="table table-bordered">
+          <tr *ngFor="let item of datatable"  class="table " style="width: 100%;">
+            <td>{{item.id_solicitud}}</td>
+            <td>{{item.solicitante}}</td>
+            <td>{{item.fechaSolicitud}}</td>
+            <td>{{item.para}}</td>
+            <td>{{item.motivo}}</td>
+            <td>{{item.cantidad}}</td>
+            <td>{{item.unidadMedida}}</td>
+            <td>{{item.area}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.observaciones}}</td>
+            <td>{{item.autorizador}}</td>
+            <td>{{item.fechaSalida}}</td>
+            <td>{{item.nombreProvedor}}</td>
+            <td>{{item.comentariosCompras}}</td>
+            <td>{{item.fechaRegreso}}</td>
+            <td>{{item.status2}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
