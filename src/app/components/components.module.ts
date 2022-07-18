@@ -18,13 +18,13 @@ import { RouterModule } from '@angular/router';
   declarations: [
     NavbarComponent,
     FormularioComponent,
-    AutorizarComponent,
     SalidaActivoComponent,
     VigilanciaComponent,
     MonitoreoComprasComponent,
     RetornoActivoComponent,
     ManagerComponent,
     MonitoreoAlmacenComponent,
+    AutorizarComponent
  
 
   ],
@@ -36,7 +36,6 @@ import { RouterModule } from '@angular/router';
   exports:[
     NavbarComponent,
     FormularioComponent,
-    AutorizarComponent,
     SalidaActivoComponent,
     VigilanciaComponent,
     MonitoreoComprasComponent,

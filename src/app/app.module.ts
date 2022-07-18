@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 import { RouterModule } from '@angular/router';
+import { AutorizarComponent } from './components/autorizar/autorizar.component';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,10 +16,10 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     ComponentsModule,
     PagesModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
     
   
   ],

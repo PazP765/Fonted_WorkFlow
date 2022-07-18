@@ -15,7 +15,7 @@ const routes: Routes = [
 //{path: ' ', pathMatch: 'full', redirectTo: 'home'},
 {path: 'login', component: HomeComponent },
 {path: 'form', component: FormularioComponent},
-{path: 'manager/authorize/:id_solicitud', component: AutorizarComponent},
+{path: 'manager/authorize/:id', component: AutorizarComponent},
 {path: 'output-active', component: SalidaActivoComponent},
 {path: 'vigilance', component: VigilanciaComponent},
 {path: 'monitoring', component: MonitoreoComprasComponent},
@@ -26,8 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
-  RouterModule],
-  exports: []
+  imports: [RouterModule.forRoot(routes),],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

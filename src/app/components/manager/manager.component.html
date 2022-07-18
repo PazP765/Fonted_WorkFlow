@@ -47,7 +47,7 @@
             <td>{{item.comentariosCompras}}</td>
             <td>{{item.fechaRegreso}}</td>
             <td>{{item.status2}}</td>
-            <td><a class="nav-link active" [routerLink]="['./authorize',item.id_solicitud]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">name</a>manda</td>
+            <td><a type="button" class="nav-link active"  routerLink="authorize/{{item.id_solicitud}}" >Mostrar datos</a></td>
           </tr>
         </tbody>
       </table>

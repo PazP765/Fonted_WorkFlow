@@ -31,22 +31,10 @@ export class ManagerComponent implements OnInit {
     status2:""    
   }
   constructor(private route:ActivatedRoute,private solicitudService:SolicitudService) { }
-
+  
   ngOnInit(): void {
-//     this.route.paramMap.subscribe({
-//       next:(params)=>{
-//         const id1 = params.get('id_solicitud');
-//         if(id1){
-// this.solicitudService.getByIdSolicitud(id1)
-// .subscribe({
-//   next:(response)=>{
-// this.solicitudesDetails=response;
-//   }
-// })
-//         }
-//       }
-//     });
-//     this.onDataTable();
+    
+    this.onDataTable();
   }
   onDataTable()
 {
@@ -60,6 +48,18 @@ onDeleteServ(id_Solicitud:number):void{
  
   this.solicitudService.deleteSolicitud(id_Solicitud).subscribe(res => {
     if(res){
+      this.onDataTable();
+    } else {
+      alert('Error! :(')
+    }
+  });
+}
+onUpdateMonitoreoC(solicitud:Solicitud):void{
+  this.solicitudService.updateSolicitud(solicitud.id_solicitud, solicitud).subscribe(res => {
+    if(res){
+      // this.toastr.info(`La persona número ${solicitud.id} se ha modificado con exito!`);
+  
+      
       this.onDataTable();
     } else {
       alert('Error! :(')

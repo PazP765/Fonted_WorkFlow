@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class SolicitudService {
 
   constructor(private http:HttpClient) { }
+  
+   //url:string="https://localhost:44347/api/Solicitud";
   url:string="http://172.16.200.93:8083/Api/Solicitud";
   //url:string="https://ngrok.com/next-generation";
   getSolicitud(){
@@ -24,7 +26,7 @@ export class SolicitudService {
     deleteSolicitud(id_Solicitud:number){
       return this.http.delete(this.url + `/${id_Solicitud}`);
     }
-    getByIdSolicitud(id_Solicitud:number){
+    getByIdSolicitud(id_Solicitud:string):Observable<Solicitud>{
       return this.http.get<Solicitud>(this.url+`/${id_Solicitud}`);
     }
   }
