@@ -1,37 +1,36 @@
-<div class="row mt-3">
-  <h2>Vigilancia</h2>
-    <div class="col table-responsive-sm">
-      <table id="dtMascota" class="table table-bordered table-striped table-sm table-responsive-md" style="width: 100%;">
-        <thead>
-          <tr class="table-info ">
-            <th>Solicitante</th>
-            <th>Provedor</th>
-            <th>Nombre Provedor</th>
-            <th>Motivo Salida</th>
-            <th>Cantidad</th>
-            <th>Descripción</th>
-            <th>Observaciones</th>
-            <th>Autorizador</th>
-            <th>Salida</th>
+<app-navbar></app-navbar>
+ <div class="navega card-header">
+  <a class="leter nav-link"  href="#"><i class="fas fa-home-lg-alt "></i> Inicio > <i class="navs">Monitoreo de Vigilancia</i></a> 
+</div>
 
-          </tr>
-        </thead>
-        <tbody class="table table-bordered">
-          <tr *ngFor="let item of datatable"  class="table " style="width: 100%;">
-            <td>{{item.solicitante}}</td>
-            <td>{{item.para}}</td>
-            <td>{{item.nombreProvedor}}</td>
-            <td>{{item.motivo}}</td>
-            <td>{{item.cantidad}}</td>
-            <td>{{item.descripcion}}</td>
-            <td>{{item.observaciones}}</td>
-            <td>{{item.autorizador}}</td>
-            <td>{{item.fechaSalida}}</td>
-            
-
-           
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+          <br>
+          <div class="table-responsive">
+            <table id="example" style="width:100%; height:100%;" class="table table-striped table-bordered">
+              <thead>
+                <tr  >
+                  <th>Solicitante</th>
+                  <th>Provedor</th>
+                  <th>Nombre Provedor</th>
+                  <th>Motivo Salida</th>
+                  <th>Cantidad</th>
+                  <th>Descripción</th>
+                  <th>Autorizador</th>
+                  <th>Salida</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr *ngFor="let item of datatable"   style="width: 100%;">
+                <td>{{item.solicitante}}</td>
+                <td>{{item.para}}</td>
+                <td>{{item.nombreProvedor}}</td>
+                <td>{{item.motivo}}</td>
+                <td>{{item.cantidad}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.autorizador}}</td>
+                <td>{{item.fechaSalida}}</td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+      
+  

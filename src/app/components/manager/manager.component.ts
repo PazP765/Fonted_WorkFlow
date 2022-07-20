@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { Solicitud } from 'src/app/models/solicitud';
 import { SolicitudService } from 'src/app/services/solicitud.service'; 
 @Component({
@@ -28,9 +29,14 @@ export class ManagerComponent implements OnInit {
     nombreProvedor:"",
     comentariosCompras:"",//
     fechaRegreso: "",
-    status2:""    
+    status2:"" ,
+    regresa:'',
+    validarSalida:'',
+    fechaCompromiso:'',
+    comentariosRegreso:'',
+    correoSolicitante:''   
   }
-  constructor(private route:ActivatedRoute,private solicitudService:SolicitudService) { }
+  constructor(private route:ActivatedRoute,private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) { _CargarScripts.carga(["qr"]) }
   
   ngOnInit(): void {
     

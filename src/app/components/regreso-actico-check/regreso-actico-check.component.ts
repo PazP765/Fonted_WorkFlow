@@ -1,33 +1,36 @@
-import { identifierName } from '@angular/compiler';
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Solicitud } from 'src/app/models/solicitud';
 import { SolicitudService } from 'src/app/services/solicitud.service'; 
-import {BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 declare var window: any;
 @Component({
-  selector: 'app-monitoreo-almacen',
-  templateUrl: './monitoreo-almacen.component.html',
-  styleUrls: ['./monitoreo-almacen.component.css']
+  selector: 'app-regreso-actico-check',
+  templateUrl: './regreso-actico-check.component.html',
+  styleUrls: ['./regreso-actico-check.component.css']
 })
-export class MonitoreoAlmacenComponent implements OnInit {
+export class RegresoActicoCheckComponent implements OnInit {
   solicitud:Solicitud = new Solicitud();
   datatable:any=[];
   title:any="";
   formModal: any;//1
   public titles=''
-  bsModalRef:BsModalRef=new BsModalRef;
-  constructor(private solicitudService:SolicitudService, 
-    private modalService: BsModalService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["qr"]) }
-
-
+  constructor(private solicitudService:SolicitudService) { }
+  saveSomeThing() {
+    // confirm or save something
+    this.formModal.hide();
+  }//4
+cambiotitle(){
+ 
+}
 
 
 
   ngOnInit(): void {
   
-    
+    this.titles="Salida de activo"
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById('myModal')
+    );//2
     
     this.onDataTable();
   }
@@ -119,18 +122,5 @@ onSetData(select:any){
   this.solicitud.status2=select.status2;
  
 }
-
-openModal(template: TemplateRef<any>){
-  this.bsModalRef=this.modalService.show(template);
-}
-
-openModal1(template1: TemplateRef<any>){
-  this.bsModalRef=this.modalService.show(template1);
-}
-saveSomeThing() {
-  // confirm or save something
-  this.bsModalRef.hide();
-}//4
-
 }
 

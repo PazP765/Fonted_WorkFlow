@@ -1,8 +1,9 @@
+<div class="navega card-header " *ngFor="let item of datatable">
+  <a class="leter nav-link"  href="#"><i class="fas fa-home-lg-alt"></i> Inicio > <i class="navs">Autorizar  {{ item.id_solicitud}}</i></a> 
+</div>
 
  <div class="card text-center">
-  <div class="card-header">
-    Salida de Activo 
-  </div>
+  
   <div class="card-body" *ngFor="let item of datatable" >
     <h5 class="card-title">Datos de la Solicitud</h5>
     <p class="card-text">No. Solicitud:<b> {{item.id_solicitud}}</b></p>
@@ -15,11 +16,9 @@
     <p class="card-text">Descripción: <b> {{item.descripcion}}</b></p>
     <p class="card-text">Observaciones: <b> {{item.observaciones}}</b></p>
 
-    <br>
-    <textarea  id="comentarioId" rows="5" cols="50" placeholder="Introducce un comentario"></textarea>
-      <br>
     
-    <button type="button" class="btn btn-primary">Aprobar Solicitud</button> <button type="button" class="btn btn-danger">Rechazar Solicitud</button>
+    
+    <button type="button" class="btn btn-primary">Aprobar Solicitud</button>&nbsp;&nbsp; <button type="button" class="btn btn-danger">Rechazar Solicitud</button>
     <br>
     
   </div>

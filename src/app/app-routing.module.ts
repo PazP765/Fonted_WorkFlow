@@ -10,6 +10,7 @@ import { MonitoreoComprasComponent } from './components/monitoreo-compras/monito
 import { RetornoActivoComponent } from './components/retorno-activo/retorno-activo.component';
 import { ManagerComponent } from './components/manager/manager.component';
 import { MonitoreoAlmacenComponent } from './components/monitoreo-almacen/monitoreo-almacen.component';
+import { RegresoActicoCheckComponent } from './components/regreso-actico-check/regreso-actico-check.component';
 
 const routes: Routes = [
 //{path: ' ', pathMatch: 'full', redirectTo: 'home'},
@@ -21,7 +22,8 @@ const routes: Routes = [
 {path: 'monitoring', component: MonitoreoComprasComponent},
 {path: 'active-return', component: RetornoActivoComponent},
 {path: 'manager', component: ManagerComponent},
-{path: 'monitoreo2', component: MonitoreoAlmacenComponent}
+{path: 'monitoreo2', component: MonitoreoAlmacenComponent},
+{path: 'monitoreo2/RegreCheck/:id', component: RegresoActicoCheckComponent}
 
 ];
 

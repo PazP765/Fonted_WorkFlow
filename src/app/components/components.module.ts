@@ -11,6 +11,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { MonitoreoAlmacenComponent } from './monitoreo-almacen/monitoreo-almacen.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RegresoActicoCheckComponent } from './regreso-actico-check/regreso-actico-check.component';
 
 
 
@@ -24,7 +25,8 @@ import { RouterModule } from '@angular/router';
     RetornoActivoComponent,
     ManagerComponent,
     MonitoreoAlmacenComponent,
-    AutorizarComponent
+    AutorizarComponent,
+    RegresoActicoCheckComponent
  
 
   ],

@@ -33,7 +33,12 @@ export class AutorizarComponent implements OnInit {
   nombreProvedor:'',
   comentariosCompras:'',
   fechaRegreso:'',
-  status2:''
+  status2:'',
+  regresa:'',
+  validarSalida:'',
+  fechaCompromiso:'',
+  comentariosRegreso:'',
+  correoSolicitante:''
  };
   constructor( 
     public solicitudService:SolicitudService,

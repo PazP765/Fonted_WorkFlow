@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { Solicitud } from 'src/app/models/solicitud';
 import { SolicitudService } from 'src/app/services/solicitud.service'; 
 declare var window: any;
@@ -13,7 +14,7 @@ export class MonitoreoComprasComponent implements OnInit {
   datatable:any=[];
   title:any="";
   formModal: any;//1
-  constructor(private solicitudService:SolicitudService) { }
+  constructor(private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["qr"]) }
 
   ngOnInit(): void {
     this.formModal = new window.bootstrap.Modal(

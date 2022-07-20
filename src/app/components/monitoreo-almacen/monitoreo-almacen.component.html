@@ -1,51 +1,126 @@
-<div class="row mt-3">
-    <h2>Control Almacen</h2>
-    <div class="col table-responsive-sm">
-      <table id="dtSol" class="table table-bordered table-striped table-sm table-responsive-md" style="width: 100%;">
-        <thead>
-          <tr class="table-info ">
-            <th>ID</th>
-            <th>Solicitante</th>
-            <th>Fecha Solicitud</th>
-            <th>Para</th>
-            <th>Motivo Salida</th>
-            <th>Cantidad</th>
-            <th>Unidad Medida</th>
-            <th>Area</th>
-            <th>Descripción</th>
-            <th>Observaciones</th>
-            <th>Autorizador</th>
-            <th>Salida</th>
-            <th>Provedor</th>
-            <th>Comentarios</th>
-            <th>Regreso</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody class="table table-bordered">
-          <tr *ngFor="let item of datatable"  class="table " style="width: 100%;">
-            <td>{{item.id_solicitud}}</td>
-            <td>{{item.solicitante}}</td>
-            <td>{{item.fechaSolicitud}}</td>
-            <td>{{item.para}}</td>
-            <td>{{item.motivo}}</td>
-            <td>{{item.cantidad}}</td>
-            <td>{{item.unidadMedida}}</td>
-            <td>{{item.area}}</td>
-            <td>{{item.descripcion}}</td>
-            <td>{{item.observaciones}}</td>
-            <td>{{item.autorizador}}</td>
-            <td>{{item.fechaSalida}}</td>
-            <td>{{item.nombreProvedor}}</td>
-            <td>{{item.comentariosCompras}}</td>
-            <td>{{item.fechaRegreso}}</td>
-            <td>{{item.status2}}</td>
-            <td><button id="SA" name="btnSA" type="button"  (click)="onSetData(item); openFormModalSA()" style=" margin: 1px " class="boton3">Salida</button></td>
-            <td><button id="RA" name="btnRA" type="button"  (click)="onSetData(item); openFormModalRA()" style=" margin: 1px " class="boton3">Regreso</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<app-navbar></app-navbar>
+ <div class="navega card-header">
+  <a class="leter nav-link"  href="#"><i class="fas fa-home-lg-alt "></i> Inicio > <i class="navs">Monitoreo de almacén</i></a> 
+</div>
 
+          <br>
+          <div class="table-responsive">
+            <table id="example" style="width:100%;" class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th >ID</th>
+                  <th >Solicitante</th>
+                  <th >Fecha Solicitud</th>
+                  <th >Para</th>
+                  <th >Motivo Salida</th>
+                  <th >Cantidad</th>
+                  <th >Unidad Medida</th>
+                  <th >Area</th>
+                  <th >Descripción</th>
+                  <th >Observaciones</th>
+                  <th >Autorizador</th>
+                  <th >Salida</th>
+                  <th >Provedor</th>
+                  <th >Comentarios</th>
+                  <th >Regreso</th>
+                  <th >Status</th>
+                  <th >opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of datatable"  style="width: 100%;">
+                  <td>{{item.id_solicitud}}</td>
+                  <td>{{item.solicitante}}</td>
+                  <td>{{item.fechaSolicitud}}</td>
+                  <td>{{item.para}}</td>
+                  <td>{{item.motivo}}</td>
+                  <td>{{item.cantidad}}</td>
+                  <td>{{item.unidadMedida}}</td>
+                  <td>{{item.area}}</td>
+                  <td>{{item.descripcion}}</td>
+                  <td>{{item.observaciones}}</td>
+                  <td>{{item.autorizador}}</td>
+                  <td>{{item.fechaSalida}}</td>
+                  <td>{{item.nombreProvedor}}</td>
+                  <td>{{item.comentariosCompras}}</td>
+                  <td>{{item.fechaRegreso}}</td>
+                  <td>{{item.status2}}</td>
+                  <th>
+                    <!-- <button type="button" class="" (click)="onSetData(item); openModal(template)">Salida activo</button>
+                  <button type="button" class=" " (click)="onSetData(item); openModal1(template1)">Regreso activo</button>
+                   -->
+                  <i  (click)="onSetData(item); openModal(template)" class="textS" >salida</i> / <i (click)="onSetData(item); openModal1(template1)" class="textR" >regreso</i>
+
+                  </th>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+      
+
+<!--modales-->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Salida de activo</h4>
+    <button type="button" class="close pull-rigth" aria-label="Close" (click)="bsModalRef.hide()"> <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+   <!--inicio-->
+   <div class="row-6 mt-5">
+
+      
+
+    <div class="input-group mb-3 input-group-lg">
+      <span class="input-group-text" id="basic-addon1">Núm. solicitud:</span>
+      <input type="text" class="form-control" placeholder="id" aria-label="Username" aria-describedby="basic-addon1" name="id" id="txtid"  [(ngModel)]="solicitud.id_solicitud" disabled="disabled">
+    </div>
+  
+
+    <div class="input-group mb-3 input-group-lg">
+      <span class="input-group-text" id="basic-addon1">Fecha de salida:</span>
+      <input type="date" class="form-control" placeholder="Fecha de salida" aria-label="Username" aria-describedby="basic-addon1" name="FechaSolicitud" id="txtFechaSalida"  [(ngModel)]="solicitud.fechaSalida">
+    </div>
+
+    <div class="input-group mb-3 input-group-lg">
+      <span class="input-group-text" id="basic-addon1">Nombre del Proveedor:</span>
+      <input type="text" class="form-control" placeholder="Nombre del proveedor" aria-label="Username" aria-describedby="basic-addon1" name="NombreProvedor" id="txt"  [(ngModel)]="solicitud.nombreProvedor">
+    </div>
+
+    
+
+  </div>
+ 
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-primary" (click)="saveSomeThing(); onUpdateSalida(solicitud)"> Guardar Cambios </button>
+  </div>
+<!--fin-->
+</ng-template>
+
+<ng-template #template1>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Regreso de activo</h4>
+    <button type="button" class="close pull-rigth" aria-label="Close" (click)="bsModalRef.hide()"> <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+   <!--inicio-->
+   <div class="row-6 mt-5">
+
+    <div class="input-group mb-3 input-group-lg">
+      <span class="input-group-text" id="basic-addon1">Núm. solicitud:</span>
+      <input type="text" class="form-control" placeholder="id" aria-label="Username" aria-describedby="basic-addon1" name="id" id="txtid"  [(ngModel)]="solicitud.id_solicitud" disabled="disabled">
+    </div>
+  
+    <div class="input-group mb-3 input-group-lg">
+      <span class="input-group-text" id="basic-addon1">Fecha de Regreso:</span>
+      <input type="date" class="form-control" placeholder="Fecha de salida" aria-label="Username" aria-describedby="basic-addon1" name="FechaSolicitud" id="txtFechaSalida"  [(ngModel)]="solicitud.fechaRegreso">
+    </div>
+
+  </div> 
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-primary" (click)="saveSomeThing();onUpdateActivoR(solicitud)"> Guardar Cambios </button>
+  </div>
+ <!--fin-->
+</ng-template>
+<!--fin modales-->
+  
 

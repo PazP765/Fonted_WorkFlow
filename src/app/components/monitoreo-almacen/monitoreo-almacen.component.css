@@ -1,0 +1,79 @@
+
+
+
+/* 
+
+.textS{
+    color: green;
+}
+.textR{
+  color: blue;  
+}
+.textS:hover{
+    color: rgb(255, 255, 255);
+}
+.textR:hover{
+  color: rgb(255, 255, 255);  
+}
+.back{
+  position: sticky;
+  
+}
+.back:hover{
+
+  background-color: rgb(245, 150, 150);
+}
+
+.container {
+  text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgb(255, 0, 0);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 153, 255, 0.404);
+  color: rgb(112, 24, 78);
+}
+
+.thead-green {
+  background-color: rgb(0, 92, 99);
+  color: white;
+  
+}
+
+.far{
+  cursor: pointer;
+}
+.gree-icon{
+  color: #198754;
+}
+.red-icon{
+  color: #dc3545;
+}
+
+
+ 
+.container {
+text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgb(235, 235, 235);
+}
+
+.table-striped tbody tr:nth-of-type(odd):hover {
+  background-color: rgba(0, 153, 255, 0.404);
+}
+
+
+
+.thead-blue {
+background-color: rgb(0, 63, 99);
+color: white;
+}
+.div1{
+
+  background-color: rgb(217, 235, 235);
+}  */

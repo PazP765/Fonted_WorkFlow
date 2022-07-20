@@ -16,6 +16,11 @@ export class Solicitud{
     comentariosCompras:String ="";//
     fechaRegreso: String = "";
     status2:String ="";
+    regresa: String="";
+    validarSalida: String ="";
+    fechaCompromiso: String= "";
+    comentariosRegreso: String="";
+    correoSolicitante: String="";
 
     
 }
