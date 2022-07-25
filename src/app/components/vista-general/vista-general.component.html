@@ -1,0 +1,33 @@
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table  class="table table-bordered table-hover dt-responsive">
+      <thead>
+          <tr>
+            <th>Número de solicitud</th>
+            <th>Fecha de solicitud</th>
+            <th>Fecha de regreso programada</th>
+            <th>Estatus</th>
+            <th>Ticket</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of datatable"  >
+                  
+                <td>{{item.id_solicitud}}</td>
+                <td>{{item.fechaSolicitud}}</td>
+                <td>{{item.motivo}}</td>
+                <td>{{item.status2}}</td>
+                <td><a type="button" class="nav-link active"  routerLink="verInfo/{{item.id_solicitud}}" >Mostrar datos</a></td>
+              </tr>   
+        
+        
+         
+        </tbody>
+        
+      </table>
+    </div>
+  </div>
+</div>

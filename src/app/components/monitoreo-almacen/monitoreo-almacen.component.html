@@ -24,6 +24,7 @@
                   <th >Comentarios</th>
                   <th >Regreso</th>
                   <th >Status</th>
+                  <th >FechaCompromiso</th>
                   <th >opciones</th>
                 </tr>
               </thead>
@@ -45,11 +46,12 @@
                   <td>{{item.comentariosCompras}}</td>
                   <td>{{item.fechaRegreso}}</td>
                   <td>{{item.status2}}</td>
+                  <td>{{item.fechaCompromiso}}</td>
                   <th>
                     <!-- <button type="button" class="" (click)="onSetData(item); openModal(template)">Salida activo</button>
                   <button type="button" class=" " (click)="onSetData(item); openModal1(template1)">Regreso activo</button>
                    -->
-                  <i  (click)="onSetData(item); openModal(template)" class="textS" >salida</i> / <i (click)="onSetData(item); openModal1(template1)" class="textR" >regreso</i>
+                  <button  (click)="onSetData(item); openModal(template)" class="textS" >salida</button> <button (click)="onSetDataRegreso(item); openModal1(template1)" class="textR" >regreso</button>
 
                   </th>
                   </tr>
@@ -79,6 +81,11 @@
     <div class="input-group mb-3 input-group-lg">
       <span class="input-group-text" id="basic-addon1">Fecha de salida:</span>
       <input type="date" class="form-control" placeholder="Fecha de salida" aria-label="Username" aria-describedby="basic-addon1" name="FechaSolicitud" id="txtFechaSalida"  [(ngModel)]="solicitud.fechaSalida">
+    </div>
+    
+    <div class="input-group mb-3 input-group-lg">
+      <span class="input-group-text" id="basic-addon1">Fecha compromiso:</span>
+      <input type="date" class="form-control" placeholder="Fecha de salida" aria-label="Username" aria-describedby="basic-addon1" name="FechaSolicitud" id="txtFechaSalida"  [(ngModel)]="solicitud.fechaCompromiso">
     </div>
 
     <div class="input-group mb-3 input-group-lg">
@@ -114,6 +121,16 @@
       <span class="input-group-text" id="basic-addon1">Fecha de Regreso:</span>
       <input type="date" class="form-control" placeholder="Fecha de salida" aria-label="Username" aria-describedby="basic-addon1" name="FechaSolicitud" id="txtFechaSalida"  [(ngModel)]="solicitud.fechaRegreso">
     </div>
+
+    <div class=" input-group-lg">
+      <br>
+      
+      <span>Comentarios: </span>
+      <textarea type="text" class="form-control" placeholder="Comentarios" aria-label="Username" aria-describedby="basic-addon1" name="id" id="txtFS"  [(ngModel)]="solicitud.comentariosRegreso"></textarea>
+    </div>
+    <br>
+
+    
 
   </div> 
   <div class="d-grid gap-2">

@@ -2,7 +2,7 @@ export class Solicitud{
     id_solicitud:number=0;
     solicitante:String ="";
     fechaSolicitud:String="";
-    para:String ="";
+    nombreproveedor:String ="";
     motivo:String ="";
     cantidad:number=1;
     unidadMedida:String ="";
@@ -10,6 +10,7 @@ export class Solicitud{
     descripcion:String ="";
     observaciones:String ="";
     autorizador:String ="";
+    statusAprobacion: String="";
     comentariosAutorizador:String ="";//
     fechaSalida: String = "";
     nombreProvedor:String ="";
@@ -21,6 +22,7 @@ export class Solicitud{
     fechaCompromiso: String= "";
     comentariosRegreso: String="";
     correoSolicitante: String="";
+    emailSent: String ="";
 
     
 }

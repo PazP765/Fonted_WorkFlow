@@ -19,7 +19,7 @@ export class MonitoreoAlmacenComponent implements OnInit {
   public titles=''
   bsModalRef:BsModalRef=new BsModalRef;
   constructor(private solicitudService:SolicitudService, 
-    private modalService: BsModalService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["qr"]) }
+    private modalService: BsModalService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["tabla_filtros"]) }
 
 
 
@@ -104,7 +104,7 @@ onSetData(select:any){
   this.solicitud.id_solicitud=select.id_solicitud;
   this.solicitud.solicitante=select.solicitante;
   this.solicitud.fechaSolicitud=select.fechaSalida;
-  this.solicitud.para=select.para;
+  this.solicitud.nombreproveedor=select.nombreproveedor;
   this.solicitud.motivo=select.motivo;
   this.solicitud.cantidad=select.cantidad;
   this.solicitud.unidadMedida=select.unidadMedida;
@@ -116,7 +116,27 @@ onSetData(select:any){
   this.solicitud.nombreProvedor=select.nombreProvedor;
   this.solicitud.comentariosCompras=select.comentariosCompras;
   this.solicitud.fechaRegreso=select.fechaRegreso;
-  this.solicitud.status2=select.status2;
+  this.solicitud.status2="En progreso";
+ 
+}
+onSetDataRegreso(select:any){
+  
+  this.solicitud.id_solicitud=select.id_solicitud;
+  this.solicitud.solicitante=select.solicitante;
+  this.solicitud.fechaSolicitud=select.fechaSalida;
+  this.solicitud.nombreproveedor=select.nombreproveedor;
+  this.solicitud.motivo=select.motivo;
+  this.solicitud.cantidad=select.cantidad;
+  this.solicitud.unidadMedida=select.unidadMedida;
+  this.solicitud.area=select.area;
+  this.solicitud.descripcion=select.descripcion;
+  this.solicitud.observaciones=select.observaciones;
+  this.solicitud.autorizador=select.autorizador;
+  this.solicitud.fechaSalida=select.fechaSalida;
+  this.solicitud.nombreProvedor=select.nombreProvedor;
+  this.solicitud.comentariosCompras=select.comentariosCompras;
+  this.solicitud.fechaRegreso=select.fechaRegreso;
+  this.solicitud.status2="Finalizado";
  
 }
 

@@ -9,9 +9,9 @@ export class SolicitudService {
 
   constructor(private http:HttpClient) { }
   
-  // url:string="https://localhost:8081//api/Solicitud";
- url:string="http://172.16.200.93:8083/Api/Solicitud";
-  //url:string="https://ngrok.com/next-generation";
+   url:string="http://172.16.200.65:8085/api/Solicitud";
+ //url:string="http://172.16.200.93:8083/Api/Solicitud";
+  //url:string="http://localhost:8085/api/solicitud";
   getSolicitud(){
     return this.http.get(this.url);
   }
@@ -28,6 +28,9 @@ export class SolicitudService {
     }
     getByIdSolicitud(id_Solicitud:string):Observable<Solicitud>{
       return this.http.get<Solicitud>(this.url+`/${id_Solicitud}`);
+    }
+    updateSolicitud1(id_solicitud:number, updateReq:Solicitud):Observable<Solicitud>{
+      return this.http.put<Solicitud>(this.url+`/${id_solicitud}`,updateReq);
     }
   }
 

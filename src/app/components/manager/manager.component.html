@@ -7,7 +7,7 @@
             <table id="example" style="width:100%;" class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th>opciones</th>
+                  
                   <th>ID</th>
                   <th>Solicitante</th>
                   <th>Fecha Solicitud</th>
@@ -22,20 +22,20 @@
                   <th>Salida</th>
                   <th>Provedor</th>
                   <th>Comentarios</th>
+                  <th>Enviado para</th>
                   <th>Regreso</th>
+                  <th>Correo Solicitante</th>
                   <th>Status</th>
                   <th>mandar mail</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of datatable"  >
-                  <td>
-                    <button>Modificar</button>
-                    <button (click)="onSetData(item); onDeleteServ(solicitud.id_solicitud)">Eliminar</button></td>
+                  
                   <td>{{item.id_solicitud}}</td>
                   <td>{{item.solicitante}}</td>
                   <td>{{item.fechaSolicitud}}</td>
-                  <td>{{item.para}}</td>
+                  <td>{{item.nombreProvedor}}</td>
                   <td>{{item.motivo}}</td>
                   <td>{{item.cantidad}}</td>
                   <td>{{item.unidadMedida}}</td>
@@ -46,7 +46,9 @@
                   <td>{{item.fechaSalida}}</td>
                   <td>{{item.nombreProvedor}}</td>
                   <td>{{item.comentariosCompras}}</td>
+                  <td>{{item.regresa}}</td>
                   <td>{{item.fechaRegreso}}</td>
+                  <td>{{item.correoSolicitante}}</td>
                   <td>{{item.status2}}</td>
                   <td><a type="button" class="nav-link active"  routerLink="authorize/{{item.id_solicitud}}" >Mostrar datos</a></td>
                 </tr>   

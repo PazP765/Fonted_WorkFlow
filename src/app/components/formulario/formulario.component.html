@@ -1,79 +1,190 @@
-<app-navbar></app-navbar>
-<div class="navega card-header">
-    <a class="leter nav-link"  href="#"><i class="fas fa-home-lg-alt"></i> Inicio > <i class="navs">Formulario para solicitud</i></a> 
-  </div>
+
+<body>
   <!--nuevo-->
+  <div class="v2">
 
-  <form class=" rounded mb-0 m-4 p-4">
-
-    <label for="inputAddress2">Nombre Completo:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-file-signature"></i></span>
-      <input type="text" class="form-control" placeholder="Nombre del solicitante" name="solicitante" [(ngModel)]="solicitud.solicitante" >
-      <datalist id="items">
-          <option>Arturo Carrazco</option>
-          <option>Cesár Jasso</option>
-          <option>Angel Reyes</option>
-        </datalist>  
-  </div>
-  <br>
-    <label for="inputAddress2">Fecha:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-calendar-alt"></i></span>
-      <input type="date" class="form-control" placeholder="MM/DD/YYYY" onfocus="(this.type='date')" name="fecha" [(ngModel)]="solicitud.fechaSolicitud">
+    <div class="v1 navega card-header">
+      <a class=""  href="#"><img src="./assets/bioflex.png" style="height:50px ;"></a> 
     </div>
+  
+  
+    <form class=" rounded mb-0 m-4 p-4">
+  
+      <label for="isProductDiscounted" class=""><b>Datos generales</b></label><br><br>
+      
+      <label for="inputAddress2">Nombre Completo:</label>
+      <div class="input-group ">
+        <span class="input-group-text" ><i class="fas fa-file-signature"></i></span>
+        <input type="text" class="f1 form-control" placeholder="Nombre del solicitante" name="solicitante" [(ngModel)]="solicitud.solicitante" >
+        <datalist id="items">
+            <option>Arturo Carrazco</option>
+            <option>Cesár Jasso</option>
+            <option>Angel Reyes</option>
+          </datalist>  
+    </div>
+    <br>
+    <label for="inputAddress2">Correo:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-envelope"></i></span>
+        <input type="text" class="f1 form-control" placeholder="e-mail" name="proveedor" [(ngModel)]="solicitud.correoSolicitante">
+      </div>
   <br>
+      <label for="inputAddress2">Area:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-location"></i></span>
+        <input type="text" class="f1 form-control" placeholder="Area" name="area" [(ngModel)]="solicitud.area">
+      </div>
+   
+  
+    <br>
+      <label for="inputAddress2">Fecha:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-calendar-alt"></i></span>
+        <input type="date" class="f1 form-control" placeholder="MM/DD/YYYY" onfocus="(this.type='date')" name="fecha" [(ngModel)]="solicitud.fechaSolicitud">
+      </div>
+    <br>
+      
+      <label for="inputAddress2">Proveedor:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-parachute-box"></i></span>
+        <input type="text" class="form-control" placeholder=" nombre del proveedor" name="proveedor" [(ngModel)]="solicitud.nombreproveedor">
+      </div>
+  <br>
+  <hr>
+  <!--dopdown motivo-->
+                      
+                          <div class="">
+                            <label for="isProductDiscounted" class=""><b>Cual es el motivo?</b></label>
+                            <br>
+                            <div class=" " data-toggle="buttons" name="isProductDiscounted">
+                              <label class="btn btn btn-blue-grey waves-effect w-30 form-check-label active">
+                                <br>
+                                      <input id="isDiscounted" class="form-check-input" name="isDiscounted" type="radio" value= 0 th:field="*{discounted}" autocomplete="off" > Motivos Comunes
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input id="isNotDiscounted" class="form-check-input" name="isDiscounted" type="radio" value= 1 th:field="*{discounted}"> Otro..
+                                  
+                                    </label>
+  
+                                  <!--lista desplegable-->
+                                  <select for="discountPercentage1" id="Motivo" name="Motivo" class="form-control" disabled>
+                                    <br>
+                                    <option value="1" selected="selected">Seleccione...</option>
+                                    <option value="Reparación">Reparación</option>
+                                    <option value="Muestra">Muestra</option>
+                                    <option value="Cotización">Cotización</option>
+                                    <option value="Venta">Venta</option>
+                                    <option value="Devolución">Devolución</option>
+                                    </select>
+                                    <div class="form-group">
+                                      <label for="discountPercentage" class="">Escriba el motivo</label>
+                                      <input type="text" class="form-control" id="discountPercentage"  name="Motivo"   disabled>
+                                      <small class="form-text text-danger" th:if="${#fields.hasErrors('discountPercentage')}" th:errors="*{discountPercentage}"></small>
+                                    </div>
+                                    <!--fin de lista desplegable-->
+  
+                              
+                              <label class="btn btn btn-blue-grey waves-effect form-check-label w-50">
+                                     </label>
+                            </div>
+                          </div>
+                          
+                        
+                     
+  <hr>
+  
+  <!--dopdown motivo-->
+  
+    <!-- <br>
+      <label for="inputAddress2">Motivo:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-file-signature"></i></span>
+        <input type="text" class="form-control" placeholder="Motivo de salidad" name="motivo" [(ngModel)]="solicitud.motivo">
+      </div> -->
+      <label for="isProductDiscounted" class=""><b>Datos del activo</b></label>
+      <br><br>
+     
+      <label for="inputAddress2">Descripción:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-file-signature"></i></span>
+        <input type="text" class="form-control" placeholder="Descripción sobre el activo" name="descripcion" [(ngModel)]="solicitud.descripcion">
+      </div>
+  <br>
+      <label for="inputAddress2">Cantidad:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-sort-numeric-up"></i></span>
+        <input type="number" class="form-control" placeholder="Cantidad" name="cantidad" [(ngModel)]="solicitud.cantidad">
+      </div>
+    <br>
     
-    <label for="inputAddress2">Proveedor:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-parachute-box"></i></span>
-      <input type="text" class="form-control" placeholder=" nombre del proveedor" name="proveedor" [(ngModel)]="solicitud.para">
-    </div>
+      <label for="inputAddress2">Unidad de medida:</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" ><i class="fas fa-sort-amount-up"></i></span>
+        <input type="text" class="form-control" placeholder="Unidad de medida" name="unidad medida" [(ngModel)]="solicitud.unidadMedida">
+      </div>
+   
+    
+    <br>
+    <!--regreso-->
+    <hr>
+    <label for="isProductDiscounted" class=""><b>Regreso</b></label>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioSi" value= 0 th:field="*{discounted}">
+    <label class="form-check-label" for="flexRadioDefault1">
+      El activo regresará
+    </label>
+  </div><br>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioNo" value= 1 th:field="*{discounted}">
+    <label class="form-check-label" for="flexRadioDefault2">
+      El activo no regresará
+    </label>
+  </div>
+  <!--regreso-->
   <br>
-    <label for="inputAddress2">Motivo:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-file-signature"></i></span>
-      <input type="text" class="form-control" placeholder="Motivo de salidad" name="motivo" [(ngModel)]="solicitud.motivo">
-    </div>
-  <br>
-    <label for="inputAddress2">Cantidad:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-sort-numeric-up"></i></span>
-      <input type="number" class="form-control" placeholder="Cantidad" name="cantidad" [(ngModel)]="solicitud.cantidad">
-    </div>
-  <br>
+      <label for="inputAddress2"><b>Observaciones:</b></label>
+      <div class="input-group flex-nowrap">
+        <textarea type="text" class="form-control" placeholder="Observaciones" name="observaciones" [(ngModel)]="solicitud.observaciones"></textarea>
+      </div>
+    <br>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-success btn.lg" (click)="onSetData(); onAddSolicitud(solicitud)"><i class="fas fa-paper-plane"></i> Solicitar</button>
+      <br>   
+  </div>
   
-    <label for="inputAddress2">Unidad de medida:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-sort-amount-up"></i></span>
-      <input type="text" class="form-control" placeholder="Unidad de medida" name="unidad medida" [(ngModel)]="solicitud.unidadMedida">
-    </div>
-  <br>
-    <label for="inputAddress2">Area:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-location"></i></span>
-      <input type="text" class="form-control" placeholder="Area" name="area" [(ngModel)]="solicitud.area">
-    </div>
-  <br>
-    <label for="inputAddress2">Descripción:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-file-signature"></i></span>
-      <input type="text" class="form-control" placeholder="Descripción" name="descripcion" [(ngModel)]="solicitud.descripcion">
-    </div>
-  <br>
-    <label for="inputAddress2">Observaciones:</label>
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" ><i class="fas fa-align-left"></i></span>
-      <input type="text" class="form-control" placeholder="Observaciones" name="observaciones" [(ngModel)]="solicitud.observaciones">
-    </div>
-  <br>
-  <div class="d-grid gap-2">
-    <button type="button" class="btn btn-success btn.lg" (click)="onAddSolicitud(solicitud)"><i class="fas fa-paper-plane"></i> Solicitar</button>
-    <br>   
-</div>
-
-      <!--fin nuevo-->
-  </form>
-
-
+        <!--fin nuevo-->
+    </form>
   
+    <!--opciones flotantes-->
+    
+    <div class="sticky-container colored-icons">
+      <ul class="sticky">
+          <li>
+              <img src="./assets/infoplus.png" width="56" height="56">
+              <p><a href="general" target="_blank">Solicitudes:<br>Consulte su solicitud.</a></p>
+          </li>
+          
+          <!-- <li>
+              <img src="images/twitter-circle.png" width="32" height="32">
+              <p><a href="https://twitter.com/noprog" target="_blank">Follow Us on<br>Twitter</a></p>
+          </li>
+          <li>
+              <img src="images/gplus-circle.png" width="32" height="32">
+              <p><a href="https://plus.google.com/programacionnet" target="_blank">Follow Us on<br>Google+</a></p>
+          </li>
+          <li>
+              <img src="images/linkedin-circle.png" width="32" height="32">
+              <p><a href="https://www.linkedin.com/company/programacionnet" target="_blank">Follow Us on<br>LinkedIn</a></p>
+          </li>
+          <li>
+              <img src="images/youtube-circle.png" width="32" height="32">
+              <p><a href="http://www.youtube.com/programacionnet" target="_blank">Subscribe on<br>YouYube</a></p>
+          </li>
+          <li>
+              <img src="images/pin-circle.png" width="32" height="32">
+              <p><a href="https://www.pinterest.com/programacionnet" target="_blank">Follow Us on<br>Pinterest</a></p>
+          </li> -->
+      </ul>
+  </div>
+  </div>
+
+</body>

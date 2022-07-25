@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { Solicitud } from 'src/app/models/solicitud';
-import { SolicitudService } from 'src/app/services/solicitud.service'; 
+import { SolicitudService } from 'src/app/services/solicitud.service';
+
 @Component({
-  selector: 'app-manager',
-  templateUrl: './manager.component.html',
-  styleUrls: ['./manager.component.css']
+  selector: 'app-vista-general',
+  templateUrl: './vista-general.component.html',
+  styleUrls: ['./vista-general.component.css']
 })
-export class ManagerComponent implements OnInit {
-  solicitud:Solicitud = new Solicitud();
+export class VistaGeneralComponent implements OnInit {
   datatable:any=[];
-  title:any="";
   solicitudesDetails:Solicitud={
     id_solicitud: 0,
     solicitante: "",
@@ -38,8 +37,9 @@ export class ManagerComponent implements OnInit {
     emailSent: '',
     statusAprobacion:'' 
   }
-  constructor(private route:ActivatedRoute,private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) { _CargarScripts.carga(["tabla_filtros"]) }
-  
+  constructor(private route:ActivatedRoute,private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["tablaG"]) }
+
+ 
   ngOnInit(): void {
     
     this.onDataTable();
@@ -75,5 +75,5 @@ onUpdateMonitoreoC(solicitud:Solicitud):void{
   });
 }
 
-}
 
+}

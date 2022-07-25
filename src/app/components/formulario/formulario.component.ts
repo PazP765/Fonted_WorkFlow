@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { Solicitud } from 'src/app/models/solicitud';
 import { SolicitudService } from 'src/app/services/solicitud.service'; 
 @Component({
@@ -10,7 +11,13 @@ export class FormularioComponent implements OnInit {
   solicitud:Solicitud = new Solicitud();
   datatable:any=[];
   title:any="";
-  constructor(private solicitudService:SolicitudService) { 
+discounted = document.getElementById('isDiscounted');
+ no_discounted = document.getElementById('isNotDiscounted')
+discount_percentage = document.getElementById('discountPercentage')
+
+ discount_percentage1 = document.getElementById('Motivo')
+
+  constructor(private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) { _CargarScripts.carga(["validaciones"])
 
   }
 
@@ -21,67 +28,60 @@ export class FormularioComponent implements OnInit {
 {
 this.solicitudService.getSolicitud().subscribe(res=>{
   this.datatable=res;
-  console.log(res);
 });
 }
 
 onAddSolicitud(solicitud:Solicitud):void{
-  console.log("hola")
-  this.solicitudService.addSolicitud(solicitud).subscribe(res => {
-    if(res){
-      console.log("hola2")
-      alert(`La solicitud${this.solicitud.id_solicitud} se ha registrado con exito!`);
-      this.clear();
-      this.onDataTable();
-    } else {
-      alert('Error! :(')
-      console.log("hola3")
-    }
-  });
+  
+  if(((document.getElementById("Motivo") as HTMLInputElement).disabled===true && (document.getElementById("discountPercentage") as HTMLInputElement).disabled===true)|| ((document.getElementById("Motivo") as HTMLInputElement).disabled===true && (document.getElementById("discountPercentage") as HTMLInputElement).value==="")|| ( (document.getElementById("discountPercentage") as HTMLInputElement).disabled===true) && (document.getElementById("Motivo") as HTMLInputElement).value===""){
+    if( (document.getElementById("radioSi") as HTMLInputElement).checked===false && (document.getElementById("radioNo") as HTMLInputElement).checked===false){
+      alert(`Un momento!!!!..,  se debe marcar si el activo regresa o no :[`)
+           }
+   
+
+           alert(`Ups!!..,  No se ha seleccionado ningun motivo valido :'(`)
+
+
+     }
+     
+    
+     else{
+      if((document.getElementById("discountPercentage") as HTMLInputElement).disabled===true){
+
+        solicitud.motivo=(document.getElementById("Motivo") as HTMLInputElement).value
+      }else{
+        solicitud.motivo=(document.getElementById("discountPercentage") as HTMLInputElement).value
+      }
+      if ((document.getElementById("radioSi") as HTMLInputElement).checked===true) {
+        solicitud.regresa="Regresar"
+      }else{
+        solicitud.regresa="No regresar"
+      }
+      this.solicitudService.addSolicitud(solicitud).subscribe(res => {
+        if(res){
+          
+     
+    
+     
+          console.log("hola2")
+          alert(`La solicitud${this.solicitud.id_solicitud} se ha registrado con exito!`);
+          this.clear();
+          this.onDataTable();
+          window.location.reload();
+        } else {
+          alert('Error! :(')
+          console.log("hola3")
+        }
+      });
+     }
+ 
 }
 //
-onUpdateMascota(solicitud:Solicitud):void{
-  this.solicitudService.updateSolicitud(solicitud.id_solicitud, solicitud).subscribe(res => {
-    if(res){
-      alert(`La solicitud número ${solicitud.id_solicitud} se ha modificado con exito!`);
-      this.clear();
-      this.onDataTable();
-    } else {
-      alert('Error! :(')
-    }
-  });
-}
 
-onDeleteMascota(id:number):void{
-  this.solicitudService.deleteSolicitud(id).subscribe(res => {
-    if(res){
-      alert(`La solicitud número ${id} se ha eliminado con exito!`);
-      this.clear();
-      this.onDataTable();
-    } else {
-      alert('Error! :(')
-    }
-  });
-}
-//
 
-onSetData(select : any){
-this.solicitud.id_solicitud=select.id_solicitud;
-this.solicitud.solicitante=select.solicitante;
-this.solicitud.fechaSolicitud=select.fechaSalida;
-this.solicitud.para=select.para;
-this.solicitud.motivo=select.motivo;
-this.solicitud.cantidad=select.cantidad;
-this.solicitud.unidadMedida=select.unidadMedida;
-this.solicitud.area=select.area;
-this.solicitud.descripcion=select.descripcion;
-this.solicitud.observaciones=select.observaciones;
-this.solicitud.autorizador=select.autorizador;
-this.solicitud.fechaSalida=select.fechaSalida;
-this.solicitud.nombreProvedor=select.nombreProvedor;
-this.solicitud.comentariosCompras=select.comentariosCompras;
-this.solicitud.fechaRegreso=select.fechaRegreso;
-this.solicitud.status2=select.status2;
+
+onSetData(){
+this.solicitud.status2="Esperando validación";
 
 }
 
@@ -89,7 +89,7 @@ clear(){
 
   this.solicitud.solicitante="";
   this.solicitud.fechaSolicitud="";
-  this.solicitud.para="";
+  this.solicitud.nombreproveedor="";
   this.solicitud.motivo="";
   this.solicitud.cantidad=1;
   this.solicitud.unidadMedida="";

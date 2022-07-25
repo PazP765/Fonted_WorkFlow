@@ -1,24 +1,23 @@
-
-<div class="container">
-  <div class="card text-center m-4">
-    <div class="card-header">
-      <b> REGISTRO</b>
-    </div>
-    <div class="card-body p-4">
-      <label style="float: left;">Nombre</label>
-      <input class="form-control m-2" type="email" placeholder="ingrese su nombre">
-
-      <label style="float: left;">Email</label>
-      <input class="form-control m-2" type="email" placeholder="ingrese su email">
-
-      <label style="float: left;">Password</label>
-      <input class="form-control m-2" type="password" placeholder="ingrese su password">
-      <button class="btn btn-primary btn-block m-2">Ingresar</button>
-      <br>
-      <!-- <button class="btn btn-info btn-block m-2" (click)="IngresarConGoogle()">Ingresar con google</button> -->
-      <label>Ya tienes cuenta? <a routerLink="/login">Solicitala</a></label>
-    </div>
-
-
+<form  >
+  <div class="imgcontainer">
+    <img src="https://firebasestorage.googleapis.com/v0/b/fragmento33.appspot.com/o/FreeToPlay%2Fpngwing.com%20(14).png?alt=media&token=f991fdc5-f0d0-4757-980d-8894fca63b6e" style="height: 250px; width: 200px;" alt="Avatar" class="avatar">
   </div>
-</div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" (click)="iniciarSesion()" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>

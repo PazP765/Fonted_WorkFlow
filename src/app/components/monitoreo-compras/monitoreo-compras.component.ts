@@ -14,7 +14,7 @@ export class MonitoreoComprasComponent implements OnInit {
   datatable:any=[];
   title:any="";
   formModal: any;//1
-  constructor(private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["qr"]) }
+  constructor(private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["tabla_filtros"]) }
 
   ngOnInit(): void {
     this.formModal = new window.bootstrap.Modal(
@@ -56,7 +56,7 @@ onSetData(select:any){
   this.solicitud.id_solicitud=select.id_solicitud;
   this.solicitud.solicitante=select.solicitante;
   this.solicitud.fechaSolicitud=select.fechaSalida;
-  this.solicitud.para=select.para;
+  this.solicitud.nombreproveedor=select.nombreproveedor;
   this.solicitud.motivo=select.motivo;
   this.solicitud.cantidad=select.cantidad;
   this.solicitud.unidadMedida=select.unidadMedida;

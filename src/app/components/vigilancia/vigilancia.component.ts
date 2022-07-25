@@ -11,7 +11,7 @@ export class VigilanciaComponent implements OnInit {
   solicitud:Solicitud = new Solicitud();
   datatable:any=[];
   title:any="";
-  constructor(private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["qr"]) }
+  constructor(private solicitudService:SolicitudService,private _CargarScripts:CargarScriptsService) {_CargarScripts.carga(["tabla_filtros"]) }
 
   ngOnInit(): void {
     this.onDataTable();
