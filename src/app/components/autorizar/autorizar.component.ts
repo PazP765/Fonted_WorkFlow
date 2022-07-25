@@ -34,6 +34,7 @@ export class AutorizarComponent implements OnInit {
    fechaSalida: '',
    nombreProvedor: '',
    comentariosCompras: '',
+   historialCompras:"",
    fechaRegreso: '',
    status2: '',
    regresa: '',
@@ -96,28 +97,28 @@ this.Serv=response;
     })
 }
 
-update(){
+// update(){
  
-this.solicitudService.updateSolicitud1(this.Serv.id_solicitud, this.datatable)
-.subscribe({
-  next:(res)=>{
+// this.solicitudService.updateSolicitud1(this.Serv.id_solicitud, this.datatable)
+// .subscribe({
+//   next:(res)=>{
  
-  }
-})
-}
+//   }
+// })
+// }
 
-onUpdateMascota(solicitud:Solicitud):void{
-  solicitud.id_solicitud=parseInt((document.getElementById("id") as HTMLInputElement).value)
-  console.log("cccc",solicitud.id_solicitud)
-  this.solicitudService.updateSolicitud(solicitud.id_solicitud, solicitud).subscribe(res => {
-    if(res){
-      alert(`La mascota número ${solicitud.id_solicitud} se ha modificado con exito!`);
+// onUpdateMascota(solicitud:Solicitud):void{
+//   solicitud.id_solicitud=parseInt((document.getElementById("id") as HTMLInputElement).value)
+//   console.log("cccc",solicitud.id_solicitud)
+//   this.solicitudService.updateSolicitud(solicitud.id_solicitud, solicitud).subscribe(res => {
+//     if(res){
+//       alert(`La mascota número ${solicitud.id_solicitud} se ha modificado con exito!`);
     
-    } else {
-      alert('Error! :(')
-    }
-  });
-}
+//     } else {
+//       alert('Error! :(')
+//     }
+//   });
+// }
 
 
 }

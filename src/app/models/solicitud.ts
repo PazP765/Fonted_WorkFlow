@@ -15,6 +15,7 @@ export class Solicitud{
     fechaSalida: String = "";
     nombreProvedor:String ="";
     comentariosCompras:String ="";//
+    historialCompras:String="";
     fechaRegreso: String = "";
     status2:String ="";
     regresa: String="";
@@ -23,6 +24,7 @@ export class Solicitud{
     comentariosRegreso: String="";
     correoSolicitante: String="";
     emailSent: String ="";
+
 
     
 }

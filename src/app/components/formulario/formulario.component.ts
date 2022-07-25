@@ -81,6 +81,7 @@ onAddSolicitud(solicitud:Solicitud):void{
 
 
 onSetData(){
+  
 this.solicitud.status2="Esperando validación";
 
 }

@@ -30,6 +30,7 @@ export class MostrarDatosComponent implements OnInit {
    fechaSalida: '',
    nombreProvedor: '',
    comentariosCompras: '',
+   historialCompras:"",
    fechaRegreso: '',
    status2: '',
    regresa: '',

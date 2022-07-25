@@ -27,6 +27,7 @@ export class VistaGeneralComponent implements OnInit {
     fechaSalida: "",
     nombreProvedor: "",
     comentariosCompras: "",
+    historialCompras:"",
     fechaRegreso: "",
     status2: "",
     regresa: '',
